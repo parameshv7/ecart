@@ -6,12 +6,12 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Popup from "./popup";
 import {
-    MDBCard,
-    MDBCardBody,
-    MDBCardTitle,
-    MDBCardText,
-    MDBCardImage
-  } from 'mdb-react-ui-kit';
+  MDBCard,
+  MDBCardBody,
+  MDBCardTitle,
+  MDBCardText,
+  MDBCardImage,
+} from "mdb-react-ui-kit";
 
 function Home() {
   const [openPopups, setOpenPopup] = useState(false);
@@ -30,35 +30,28 @@ function Home() {
 
   const todoMap = todos?.map((data: any, i: number) => {
     return (
-    //   <Card>
-    //     <Card.Body>{data?.text}</Card.Body>
-    //   </Card>
-    <MDBCard className='mb-3'>
-      
+      //   <Card>
+      //     <Card.Body>{data?.text}</Card.Body>
+      //   </Card>
+      <MDBCard className="mb-3">
         <MDBCardBody>
           <MDBCardTitle>{data?.text}</MDBCardTitle>
-          <MDBCardText>
-          {data?.para}
-          </MDBCardText>
-          
+          <MDBCardText>{data?.para}</MDBCardText>
         </MDBCardBody>
       </MDBCard>
-      
     );
   });
 
   return (
     <div className="container bg">
-          <input type="text" name="name" onClick={() => setOpenPopup(true)} />
-                  
-               
+      <h1>WelcomeBack Man!!</h1>
+      <p>You Have Pending Task Man</p>
+      <input type="text" name="name" onClick={() => setOpenPopup(true)} />
+      <br />
+      <br />
       <Popup openPopup={openPopups} setOpenPopup={setOpenPopup}>
         <Form />
       </Popup>
-
-      
-      <h1>fdfghjvklnkksadsfjkl</h1>
-      <p>xyw</p>
       <div className="aGl">{todoMap}</div>
     </div>
   );
