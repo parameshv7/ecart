@@ -12,6 +12,7 @@ import {
   MDBCardText,
   MDBCardImage,
 } from "mdb-react-ui-kit";
+import { Checkbox } from "@mui/material";
 
 function Home() {
   const [openPopups, setOpenPopup] = useState(false);
@@ -33,12 +34,15 @@ function Home() {
       //   <Card>
       //     <Card.Body>{data?.text}</Card.Body>
       //   </Card>
-      <MDBCard className="mb-3">
-        <MDBCardBody>
-          <MDBCardTitle>{data?.text}</MDBCardTitle>
-          <MDBCardText>{data?.para}</MDBCardText>
-        </MDBCardBody>
-      </MDBCard>
+      <div>
+        <Checkbox></Checkbox>
+        <MDBCard className="mb-3">
+          <MDBCardBody>
+            <MDBCardTitle>{data?.text}</MDBCardTitle>
+            <MDBCardText>{data?.para}</MDBCardText>
+          </MDBCardBody>
+        </MDBCard>
+      </div>
     );
   });
 
@@ -46,12 +50,18 @@ function Home() {
     <div className="container bg">
       <h1>WelcomeBack Man!!</h1>
       <p>You Have Pending Task Man</p>
-      <input type="text" name="name" onClick={() => setOpenPopup(true)} />
+      <input
+        type="text"
+        name=""
+        value="Please Click to Add Task!!"
+        onClick={() => setOpenPopup(true)}
+      />
       <br />
       <br />
       <Popup openPopup={openPopups} setOpenPopup={setOpenPopup}>
         <Form />
       </Popup>
+
       <div className="aGl">{todoMap}</div>
     </div>
   );
