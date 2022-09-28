@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use("/", todo);
 
-app.get("/", (req, res) => res.send("Welcome"));
+app.get("/", (req, res) => res.send("hi"));
 app.all("*", (req, res) => res.send("Route does't exist"));
 
 app.listen(port, () =>
