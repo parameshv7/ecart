@@ -18,7 +18,7 @@ function Form(props:any) {
   }, []);
 
   const gettodos = async () => {
-    const response = await axios.get(`http://localhost:5000/todos`);
+    const response = await axios.get(`http://localhost:5001/todos`);
     console.log(response.data);
     setTodos(response.data);
   };
@@ -29,7 +29,7 @@ function Form(props:any) {
     //     );
     //     console.log(data);
     // alert(JSON.stringify(data));
-    const response = await axios.post(`http://localhost:5000/todo`, data);
+    const response = await axios.post(`http://localhost:5001/todo`, data);
     
 
     if (response) {

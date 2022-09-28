@@ -24,7 +24,7 @@ function Home() {
   }, []);
 
   const gettodos = async () => {
-    const response = await axios.get(`http://localhost:5000/todos`);
+    const response = await axios.get(`http://localhost:5001/todos`);
     console.log(response.data);
     setTodos(response.data);
   };
