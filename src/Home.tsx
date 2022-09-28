@@ -31,9 +31,7 @@ function Home() {
 
   const todoMap = todos?.map((data: any, i: number) => {
     return (
-      //   <Card>
-      //     <Card.Body>{data?.text}</Card.Body>
-      //   </Card>
+   
       <div>
         <Checkbox></Checkbox>
         <MDBCard className="mb-3">
@@ -59,7 +57,7 @@ function Home() {
       <br />
       <br />
       <Popup openPopup={openPopups} setOpenPopup={setOpenPopup}>
-        <Form />
+        <Form setOpenPopup={setOpenPopup} setTodos={setTodos} />
       </Popup>
 
       <div className="aGl">{todoMap}</div>

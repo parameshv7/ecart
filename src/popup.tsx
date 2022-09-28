@@ -7,7 +7,7 @@ const Popup=(props:any)=>{
         <div>
             <Dialog className="mainClass" open={openPopup} maxWidth="sm" fullWidth>
                 <div style={{display:'flex'}}>
-                <DialogTitle style={{flexGrow:1}}>Trainer Add Form</DialogTitle>
+                <DialogTitle style={{flexGrow:1}}>Add Task</DialogTitle>
                 <ClearIcon onClick={()=>setOpenPopup(false)} style={{color:'white',fontSize:'30px',margin:'20px 13px 0 0',cursor:'pointer'}}/>
                 </div>
                 <Divider variant="middle" />

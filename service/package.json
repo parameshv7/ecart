@@ -1,0 +1,21 @@
+{
+  "name": "get-token-service",
+  "version": "1.0.0",
+  "description": "get-token-service",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19",
+    "pg": "^7.18.2",
+    "postgres": "^3.2.4",
+    "uuid": "^8.3.2"
+  }
+}

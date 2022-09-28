@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
-function Form() {
+function Form(props:any) {
+  const {setTodos,setOpenPopup}=props;
   const { control, handleSubmit } = useForm({
     defaultValues: {
       text: "",
@@ -12,6 +13,15 @@ function Form() {
     },
   });
   const navigate = useNavigate();
+  useEffect(() => {
+    gettodos();
+  }, []);
+
+  const gettodos = async () => {
+    const response = await axios.get(`http://localhost:5000/todos`);
+    console.log(response.data);
+    setTodos(response.data);
+  };
 
   const onSubmit = async (data: any) => {
     //     let dataS = JSON.stringify(data);
@@ -20,10 +30,11 @@ function Form() {
     //     console.log(data);
     // alert(JSON.stringify(data));
     const response = await axios.post(`http://localhost:5000/todo`, data);
-    navigate(0);
+    
 
     if (response) {
-        
+      gettodos();
+      setOpenPopup(false)
     }
   };
 
