@@ -24,7 +24,7 @@ function Home() {
   }, []);
 
   const gettodos = async () => {
-    const response = await axios.get(`http://localhost:1000/todos`);
+    const response = await axios.get(`https://express-w9dl.vercel.app/todos`);
     console.log(response.data);
     setTodos(response.data);
   };
